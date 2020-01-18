@@ -15,12 +15,26 @@ namespace stLib.Common {
             return sum;
         }
 
-        public static string [] ParseComData( string data )
+        public static List<string> ParseComData( string data )
         {
             data.TrimEnd(',');
-            var r = data.Split( ',' );
+            var r = new List<string>( data.Split( ',' ) );
+            r.RemoveAll( str => str == "" );
             return r;
         }
 
+        public static string WrapWith( string raw, string left, string right )
+        {
+            return left + raw + right;
+        }
+
+        public static int SubstringCount( string str, string substring )
+        {
+            if ( str.Contains( substring ) ) {
+                string strReplaced = str.Replace( substring, "" );
+                return ( str.Length - strReplaced.Length ) / substring.Length;
+            }
+            return 0;
+        }
     }
 }
