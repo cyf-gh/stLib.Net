@@ -20,6 +20,17 @@ namespace stLib.Net {
         }
     }
 
+    public static class DNSHelper { 
+        public static string ParseIPFromDomain( string domain ) {
+            try {
+                IPHostEntry host = Dns.GetHostEntry( domain );
+                IPAddress ip = host.AddressList[0];
+                return ip.ToString();
+            } catch {
+                return "";
+            }
+        }
+    }
 }
 
 namespace stLib.Net.Haste {
@@ -53,8 +64,8 @@ namespace stLib.Net.Haste {
             try {
                 tcpClient.Connect( IPAddress.Parse( ipport.IP ), Convert.ToInt32( ipport.TcpPort ) );
             } catch ( Exception ex ) {
-                stLogger.Log( "", ex );
-                throw ex;
+                stLogger.Log( ex );
+                return "";
             }
 
             NetworkStream ntwStream = tcpClient.GetStream();

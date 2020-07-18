@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>stLib</RootNamespace>
     <AssemblyName>stLib</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\_Repos\Vt.Client\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,8 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Common\Random.cs" />
     <Compile Include="src\Config\IPPortConfig.cs" />
-    <Compile Include="src\Log\LogHelper.cs" />
     <Compile Include="src\Common\StringHelper.cs" />
+    <Compile Include="src\Log\LogHelper.cs" />
     <Compile Include="src\Net\Net.cs" />
     <Compile Include="src\Win32\ConsoleHelper.cs" />
     <Compile Include="src\Win32\GlobalAtom.cs" />
